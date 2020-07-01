@@ -20,7 +20,7 @@ if ($captured->num_rows == 1) {
     echo "Login Successfull!";
 } else if ($captured->num_rows == 0) {
     echo "Login Failed";
-} else if ($captured->num_rows > 2) {
+} else if ($captured->num_rows == 2) {
     echo "Error: username taken";
 } else {
     echo $link->error;
