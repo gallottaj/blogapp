@@ -9,6 +9,9 @@
 $firstName = $_GET['firstNameInput'];
 $lastName = $_GET['lastNameInput'];
 $emailAddress = $_GET['emailAddressInput'];
+$userName = $_GET['usernameInput'];
+$passWord = $_GET['passwordInput'];
+
 
 
 $servername = "localhost";
@@ -26,14 +29,25 @@ if (!$conn) {
 echo "Connected successfully";
 
 
-$sql_statement = "INSERT INTO `registration` (`id`, `first_name`, `last_name`, `email_address`)
-VALUES (NULL, '$firstName' , '$lastName', '$emailAddress')";
+$sql_statement = "INSERT INTO `registration` (`id`, `first_name`, `last_name`, `email_address`, `username`, `password`)
+VALUES (NULL, '$firstName' , '$lastName', '$emailAddress', '$userName', '$passWord')";
 
 if (mysqli_query($conn, $sql_statement)) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql_statement . "<br>" . mysqli_error($conn);
 }
+
+if ($firstName == NULL) {
+    echo nl2br("- First Name cannot be left blank\n\n");
+}
+if ($lastName == NULL) {
+    echo nl2br("- Last Name cannot be left blank\n\n");
+}
+if ($emailAddress == NULL) {
+    echo nl2br("- Email cannot be left blank\n\n");
+}
+
 
 mysqli_close($conn);
 
