@@ -14,7 +14,7 @@ if ($passWord == NULL) {
     echo nl2br("- Password cannot be left blank\n\n");
 }
 
-$query = "SELECT username, password FROM registration WHERE username = $userName AND password = $passWord";
+$query = "SELECT `username`, `password` FROM registration WHERE username = '$userName' AND password = '$passWord'";
 $captured = $link->query($query);
 if ($captured->num_rows == 1) {
     echo "Login Successfull!";
