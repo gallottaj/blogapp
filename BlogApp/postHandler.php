@@ -44,6 +44,7 @@ function filterwords($blog_text){
         $blog_text = preg_replace('/\b'.$filterWords[$i].'\b/ie',"str_repeat('*',strlen('$0'))",$blog_text);
     }
     return $blog_text;
+    echo $$blog_text;
 }
 
 
