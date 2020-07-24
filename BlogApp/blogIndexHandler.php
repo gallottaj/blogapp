@@ -2,15 +2,11 @@
 
 //Joey Gallotta
 //CST-126 Blog App
-//Milestone 1
-//6/25/20
 
-
-$blog_title = $_GET['titleInput'];
-$blog_text = $_GET['textInput'];
-$blog_author = $_GET['authorInput'];
-
-
+$blogID = $_GET['id'];
+$blogTitle = $_GET['blogTitle'];
+$blogAuthor = $_GET['blogAuthor'];
+$blogText = $_GET['blogText'];
 
 $servername = "localhost";
 $username = "root";
@@ -27,8 +23,7 @@ if (!$conn) {
 echo "Connected successfully";
 
 
-$sql_statement = "INSERT INTO `blog_post` (`id`, `blog_author`, `blog_title`, `blog_text`)
-VALUES (NULL, '$blog_author' , '$blog_title', '$blog_text')";
+$sql_statement = "SELECT (`id`, `blog_author`, `blog_title`, `blog_text`) FROM `blog_post` WHERE id = $blogID";
 
 if (mysqli_query($conn, $sql_statement)) {
     echo "New record created successfully";
@@ -36,8 +31,6 @@ if (mysqli_query($conn, $sql_statement)) {
     echo "Error: " . $sql_statement . "<br>" . mysqli_error($conn);
 }
 
-
-
 mysqli_close($conn);
 
-?> q
+?>

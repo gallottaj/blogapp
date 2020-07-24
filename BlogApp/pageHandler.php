@@ -37,12 +37,6 @@ if (mysqli_query($conn, $sql_statement)) {
     echo "Error: " . $sql_statement . "<br>" . mysqli_error($conn);
 }
 
-if ($firstName == NULL) {
-    echo nl2br("- First Name cannot be left blank\n\n");
-}
-if ($lastName == NULL) {
-    echo nl2br("- Last Name cannot be left blank\n\n");
-}
 
 
 
