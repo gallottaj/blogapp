@@ -1,21 +1,53 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
 
-<!-- 
-Joey Gallotta
-CST-126 Blog App -->
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-<head> 
-<h1>Blog Post</h1>
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
 
-<form action="postHandler.php">
-Blog Title: <input type="text" name="titleInput"><br>
-Author: <input type="text" name="authorInput"><br>
-Blog Text: <br><textarea name="textInput" rows="10" cols="30">
-The cat was playing in the garden.
-</textarea>
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
 
-<button type = "submit">OK</button>
-</form>
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Blog Post</h2>
+
+<div class="container">
+  <p><span>Author: Joey Gallotta</span> The Truth About..</p>
+  <p>Have you ever wondered why</p>
+</div>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Font Awesome Icon Library -->
@@ -98,13 +130,13 @@ body {
 </head>
 <body>
 
-<span class="heading">User Rating</span>
+<span class="heading">Blog Rating</span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star"></span>
-<p>4.1 average based on 254 reviews.</p>
+<p>4.1 average based on 5 reviews.</p>
 <hr style="border:3px solid #f1f1f1">
 
 <div class="row">
@@ -117,7 +149,7 @@ body {
     </div>
   </div>
   <div class="side right">
-    <div>150</div>
+    <div>1</div>
   </div>
   <div class="side">
     <div>4 star</div>
@@ -128,7 +160,7 @@ body {
     </div>
   </div>
   <div class="side right">
-    <div>63</div>
+    <div>1</div>
   </div>
   <div class="side">
     <div>3 star</div>
@@ -139,7 +171,7 @@ body {
     </div>
   </div>
   <div class="side right">
-    <div>15</div>
+    <div>1</div>
   </div>
   <div class="side">
     <div>2 star</div>
@@ -150,7 +182,7 @@ body {
     </div>
   </div>
   <div class="side right">
-    <div>6</div>
+    <div>1</div>
   </div>
   <div class="side">
     <div>1 star</div>
@@ -161,13 +193,16 @@ body {
     </div>
   </div>
   <div class="side right">
-    <div>20</div>
+    <div>1</div>
   </div>
 </div>
+<br>
+<button type = "submit">Review</button>
+
 
 </body>
 
 
-</head>
 
+</body>
 </html>
